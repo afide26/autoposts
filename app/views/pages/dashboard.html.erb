@@ -1,0 +1,28 @@
+<div class="row">
+	<div class="col-md-2 text-center">
+		<h3>Settings</h3>
+		<%= image_tag "Logo.jpeg", class:'logo' %>
+		<hr/>
+		<div class="time-zone">
+			<p class="text-center">
+				<b><%= Time.zone.name %> Timezone </b><br/>
+				<%= link_to 'Change', edit_user_registration_path %>
+			</p>
+		</div>
+		<div class="social">
+			
+		</div>
+	</div>
+
+	<!-- Scheduled Posts -->
+	<div class="col-md-5">
+		<h3 class="text-center">Scheduled</h3>
+		<hr/>
+	</div>
+
+	<!-- Post History -->
+	<div class="col-md-2 text-center">
+		<h3 class="text-center">History</h3>
+		<hr/>
+	</div>
+</div>
