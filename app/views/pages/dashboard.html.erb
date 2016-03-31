@@ -10,6 +10,7 @@
 			</p>
 		</div>
 		<div class="social">
+			<!-- Twitter links -->
 			<% unless current_user.connections.where(provider: 'twitter').any? %>
 				<%= link_to 'auth/twitter', class:'btn btn-info btn-block btn-sm' do %>
 					<i class="fa fa-twitter"></i> Connect To Twitter
@@ -19,6 +20,20 @@
 					<i class="fa fa-twitter"></i> Connect To Twitter
 				<% end %>
 				<%= link_to connection_path(current_user.connections.where(provider: 'twitter').first), method: :delete, class:'btn btn-info btn-block btn-sm' do %>
+					<i class="fa fa-trash"></i> Delete Connection
+				<% end %>
+			<% end %>
+
+			<!-- Facebook links -->
+			<% unless current_user.connections.where(provider: 'facebook').any? %>
+				<%= link_to 'auth/facebook', class:'btn btn-primary btn-block btn-sm' do %>
+					<i class="fa fa-facebook"></i> Connect To Facebook
+				<% end %>
+			<% else %>
+				<%= link_to 'auth/facebook', class:'btn btn-primary btn-block btn-sm', disabled: true do %>
+					<i class="fa fa-facebook-f"></i> Connect To Facebook
+				<% end %>
+				<%= link_to connection_path(current_user.connections.where(provider: 'facebook').first), method: :delete, class:'btn btn-primary btn-block btn-sm' do %>
 					<i class="fa fa-trash"></i> Delete Connection
 				<% end %>
 			<% end %>
